@@ -10,16 +10,20 @@ body {
     font-family:sans-serif;
     background-color: #121212;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 body.light {
     background-color: #fff;
 }
 
 .container {
+    position: relative;
     max-width: 740px;
-    margin: auto;
+    width: 100%;
     padding: 20px;
-    /* background-color: red; */
     text-align: center;
 }
 
@@ -140,9 +144,10 @@ body.light {
 .container .inputElementSection {
     background-color: #cccccc92;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     position: absolute;
-    top: 0;
+    border-radius: 15px;
+    top: 5%;
     left: 0;
     display: flex;
     justify-content: center;
@@ -162,8 +167,14 @@ body.light {
     display: flex;
     flex-direction: column;
     padding: 17px;
+    margin: 0 10px;
     border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
+
+
+
 .container .inputElementSection .inputElement.light{
     background-color: #fff;
 }
@@ -171,7 +182,7 @@ body.light {
 .container .inputElementSection .inputElement #url-input {
     margin: 10px 0;
     padding: 13px 25px;
-    width:400px;
+    width:100%;
     background-color: black;
     border: 1px solid blue;
     color: #fff;
@@ -320,8 +331,8 @@ body.light {
         position: relative;
         background-color: #fff;
         position: absolute;
-        right: 2%;
-        bottom: 4%;
+        right: 10px;
+        bottom: 1%;
         border-radius: 14px;
 }
 .switch.active {
