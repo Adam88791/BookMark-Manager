@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BookMark Manager</title>
+</head>
+<body class="mode">
+    <div class="container">
+        <div class="header">
+            <h1>BookMark Manager</h1>
+            <p class="mode">Manage your bookmarks efficiently</p>
+        </div>
+        <button class="addButton">+ Add Bookmark</button>
+        <!-- first use -->
+        <div class="first-use ">
+        <i class="fa-solid fa-bookmark mode"></i>        
+        <h2 class="mode">No bookmarks Yet </h2>
+        <p> Get started by creating a new bookmark !!!</p>
+        </div>
+
+        <div class="content">
+        <!-- Bookmarks will be displayed here -->
+        </div>
+
+        <div class="inputElementSection">
+            <div class="inputElement mode">
+                <label class="mode" for="title-input">Title</label>
+                <input type="text" name="" class="mode" id="title-input">
+                <label class="mode" for="url-input">URL</label>
+                <input type="text" name="" class="mode" id="url-input">
+                <label class="mode" for="content-input">Descreption (optional) </label>
+                <textarea name="" class="mode" id="content-input"></textarea>
+                <div class="buttons">
+                    <button class="cancel-button">Cancel</button>
+                    <button class="save-button">Save</button>
+                    <button style="display: none;" class="edit-button">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="switch">
+        <i class="fa-solid fa-moon hidden"></i>
+        <i class="fa-solid fa-sun" ></i>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

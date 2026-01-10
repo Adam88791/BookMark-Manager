@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:sans-serif;
+    background-color: #121212;
+    overflow-x: hidden;
+}
+body.light {
+    background-color: #fff;
+}
+
+.container {
+    max-width: 740px;
+    margin: auto;
+    padding: 20px;
+    /* background-color: red; */
+    text-align: center;
+}
+
+/* header styles */
+
+.container .header {
+    /* background-color: green; */
+    margin: 40px;
+}
+
+.container .header h1 {
+    font-size: 40px;
+    color: rgb(19, 104, 231);
+    margin: 15px 0;
+}
+.container .header p {
+    font-size: 15px;
+    color: #ccc;
+}
+.container .header p.light {
+    color: black;
+}
+.container > button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(19, 104, 231);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.container button:hover {
+    background-color: rgb(11, 75, 166);
+    scale: 0.95;
+}
+
+.container .first-use {
+    margin: 30px 0;
+}
+.container .first-use.disable{
+    display: none;
+}
+
+.container .first-use i {
+    font-size: 60px;
+    color: #fff;
+}
+.container .first-use i.light{
+    color: black;
+}
+
+.container .first-use h2 {
+    color: #fff;
+    margin: 10px 0;
+}
+.container .first-use h2.light {
+    color: black;
+}
+
+.container .first-use p {
+    margin: 20px 0;
+    color: #ccc;
+}
+
+.container .content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container .content .book-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #00000029;
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: auto ;
+    margin-top: 5px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.39);
+    color: rgb(19, 104, 231);
+}
+.container .content .book-item.light {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    color: black;
+    background-color: red;
+}
+.container .content .book-item:hover{
+    cursor: pointer;
+}
+
+.container .content .book-item .book-info a {
+    font-size: 15px;
+    margin: 1px 0;
+    text-decoration: none;
+    
+    display: block;
+}
+.container .content .book-item .book-info p {
+    font-size: 12px;
+}
+
+
+
+.container .content .book-actions button {
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: rgb(19, 104, 231);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.container .inputElementSection {
+    background-color: #cccccc92;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+.container .inputElementSection.active{
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.container .inputElementSection .inputElement {
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    padding: 17px;
+    border-radius: 10px;
+}
+.container .inputElementSection .inputElement.light{
+    background-color: #fff;
+}
+.container .inputElementSection .inputElement #title-input ,
+.container .inputElementSection .inputElement #url-input {
+    margin: 10px 0;
+    padding: 13px 25px;
+    width:400px;
+    background-color: black;
+    border: 1px solid blue;
+    color: #fff;
+}
+.container .inputElementSection .inputElement #content-input{
+    height: 100px;
+    margin: 10px 0;
+    padding: 13px 25px;
+    resize: none;
+    background-color: black;
+    border: 1px solid blue;
+    color: #fff;
+}
+.container .inputElementSection .inputElement label {
+    text-align: left;
+    margin: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* theme set */
+.container .inputElementSection .inputElement.light #title-input ,
+.container .inputElementSection .inputElement.light #url-input,
+.container .inputElementSection .inputElement.light #content-input {
+    color: black;
+    background-color: #fff;
+}
+.container .inputElementSection .inputElement label.light{
+    color: black;
+}
+/* ###### */
+
+
+.container .inputElementSection .inputElement .buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.container .inputElementSection .inputElement button.cancel-button {
+    background-color: rgba(128, 128, 128, 0.568);
+}
+.container .inputElementSection .inputElement button {
+    background-color: rgb(19, 104, 231);
+    border: none;
+    margin: 10px ;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+.container .inputElementSection .inputElement button:hover{
+    scale: 0.95;
+}
+
+.container .shortcut {
+    background-color: #121212;
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.39);
+    padding: 20px;
+    border-radius: 7px;
+    width: 200px;
+    color: #fff;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(30px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.container .shortcut.light {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    color: black;
+}
+
+.container .shortcut.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+
+.container .shortcut .close-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+.container .shortcut a{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: 10px 0;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+.container .shortcut a.light {
+    color: #ccc;
+}
+.container .shortcut p{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: 15px 0;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 6px;
+}
+.container .shortcut p.light {
+    border-bottom: 1px solid black;
+}
+
+.container .shortcut .close-btn {
+    cursor: pointer;
+}
+
+/* .container .shortcut > button {
+    color: red;
+} */
+.container .shortcut button i {
+    color: rgb(19, 104, 231);
+}
+.container .shortcut button {
+    /* color: transparent; */
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.darkmode {
+    background-color: #121212;
+}
+.whiteshadow {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.switch {
+        display: block;
+        cursor:pointer;
+        font-size: 25px;
+        width:45px;
+        height: 45px;
+        position: relative;
+        background-color: #fff;
+        position: absolute;
+        right: 2%;
+        bottom: 4%;
+        border-radius: 14px;
+}
+.switch.active {
+    background-color: black;
+}
+
+.switch i {
+    color: blue;
+        position: absolute;
+        inset: 0;
+        margin:auto;
+        width:max-content;
+        height: max-content;
+        transition: 0.3s ease;
+    }
+
+.switch i.hidden {
+    display: none;
+}
+.switch i.hideafter {
+    display: none;
+}
