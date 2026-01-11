@@ -38,6 +38,7 @@ cancelButton.addEventListener("click" , () => {
 })
 
 saveButton.addEventListener("click" , () => {
+    if (!inputsAreValid()) return;
     inputsSection.classList.remove("active");
     saveFunction();
 })
@@ -117,9 +118,25 @@ function bookMarkCreator(bookmark) {
 let titleInput = document.querySelector("#title-input");
 let urlInput = document.querySelector("#url-input");
 let contentInput = document.querySelector("#content-input");
-// the function
-function saveFunction(){
 
+
+// helper: validate inputs are not empty
+function inputsAreValid() {
+    if (!titleInput.value.trim() || !urlInput.value.trim() || !contentInput.value.trim()) {
+        alert("Please fill in all fields before saving.");
+        return false;
+    }
+    return true;
+}
+
+
+// the function
+function saveFunction(e){
+
+    // if (urlInput.value == "" || titleInput.value == "" || contentInput.value == "") {
+    //     e.preeve
+    // }
+    
     const id = Date.now();
     const titleValue = titleInput.value;
     const urlValue = urlInput.value;
@@ -246,18 +263,20 @@ function createShortcut(titleText, linkUrl, contentText , id){
 
     editBtn.addEventListener("click", () => {
         inputsSection.classList.add("active");
-        let editButton = inputsSection.querySelector(".edit-button");
+        const editFormButton = inputsSection.querySelector(".edit-button");
         inputsSection.querySelector(".save-button").style.display = "none";
-        editButton.style.display = "block";
-
+        editFormButton.style.display = "block";
 
         titleInput.value = titleText;
         urlInput.value = linkUrl;
         contentInput.value = contentText;
 
-        editButton.addEventListener("click" , () => {
-        editElemnt(titleInput.value , urlInput.value , contentInput.value , id);
-        })
+        // replace handler to avoid duplicate listeners
+        editFormButton.onclick = () => {
+            if (!inputsAreValid()) return;
+            editElemnt(titleInput.value , urlInput.value , contentInput.value , id);
+            inputsSection.classList.remove("active");
+        }
 
     });
 
