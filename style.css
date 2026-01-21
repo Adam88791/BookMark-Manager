@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     text-align: center;
 }
 body.light {
@@ -25,6 +26,26 @@ body.light {
     width: 100%;
     padding: 20px;
     text-align: center;
+    margin-top: 4rem;
+}
+
+header {
+    background-color: #121212;
+    width: 100%;
+    padding: 2px 5px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    border-bottom: 2px solid #6e6d6d68;
+    text-align: start;
+}
+header.light {
+    background-color: #fff;
+    border-bottom: 2px solid #6e6d6d68;
+
+}
+header img {
+    width: 60px;
 }
 
 /* header styles */
@@ -141,8 +162,21 @@ body.light {
     margin-left: 5px;
 }
 
+.container #searchInput {
+    border: none;
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 100%;
+    border-radius: 7px;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+
 .container .inputElementSection {
-    background-color: #cccccc92;
+    background-color: transparent;
     width: 100%;
     height: 90vh;
     position: absolute;
@@ -326,17 +360,18 @@ body.light {
         display: block;
         cursor:pointer;
         font-size: 25px;
-        width:45px;
-        height: 45px;
+        width:30px;
+        height: 30px;
         position: relative;
-        background-color: #fff;
-        position: absolute;
+        /* background-color: #fff; */
+        position: fixed;
         right: 10px;
-        bottom: 1%;
-        border-radius: 14px;
+        top: 7px;
+        border-radius: 10px;
+        padding: 10px;
 }
 .switch.active {
-    background-color: black;
+    /* background-color: black; */
 }
 
 .switch i {
@@ -354,4 +389,15 @@ body.light {
 }
 .switch i.hideafter {
     display: none;
+}
+
+footer {
+    margin-top: 20px;
+    color: #ccc;
+    padding: 20px;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(19, 104, 231);
 }

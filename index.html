@@ -8,11 +8,20 @@
     <title>BookMark Manager</title>
 </head>
 <body class="mode">
+    <header class="mode">
+            <img src="./unnamed-removebg-preview.png" alt="">
+            <div class="switch">
+        <i class="fa-solid fa-moon hidden"></i>
+        <!-- <i class="fa-solid fa-sun" ></i> -->
+        <i class="fa-regular fa-sun"></i>
+    </div>
+    </header>
     <div class="container">
         <div class="header">
             <h1>BookMark Manager</h1>
             <p class="mode">Manage your bookmarks efficiently</p>
         </div>
+            <input type="text" class="mode" id="searchInput" placeholder="Search... " >
         <button class="addButton">+ Add Bookmark</button>
         <!-- first use -->
         <div class="first-use ">
@@ -31,7 +40,7 @@
                 <input type="text" name="" class="mode" id="title-input">
                 <label class="mode" for="url-input">URL</label>
                 <input type="text" name="" class="mode" id="url-input">
-                <label class="mode" for="content-input">Descreption (optional) </label>
+                <label class="mode" for="content-input">Descreption </label>
                 <textarea name="" class="mode" id="content-input"></textarea>
                 <div class="buttons">
                     <button class="cancel-button">Cancel</button>
@@ -41,10 +50,9 @@
             </div>
         </div>
     </div>
-    <div class="switch">
-        <i class="fa-solid fa-moon hidden"></i>
-        <i class="fa-solid fa-sun" ></i>
-    </div>
+    <footer>
+        <p>© 2026 <a href="https://github.com/Adam88791" target="_blank">Adam Es-salhi</a> All rights reserved.</p>
+    </footer>
 
     <script src="./script.js"></script>
 </body>

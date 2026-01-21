@@ -85,14 +85,14 @@ function bookMarkCreator(bookmark) {
     // create the bookmark seconde chilled (icons and shortcuts)
     const bookActions = document.createElement("div");
     bookActions.classList.add("book-actions");
-    const markButton = document.createElement("button");
-    markButton.classList.add("mark-btn");
-    markButton.innerHTML = '<i class="fa-solid fa-bookmark"></i>';
+    // const markButton = document.createElement("button");
+    // markButton.classList.add("mark-btn");
+    // markButton.innerHTML = '<i class="fa-solid fa-bookmark"></i>';
 
     const shortButton = document.createElement("button");
     shortButton.classList.add("short-btn");
     shortButton.innerHTML = '<i class="fa-solid fa-list"></i>';
-    bookActions.append(markButton);
+    // bookActions.append(markButton);
     bookActions.append(shortButton);
     // append the bookactions to the main element
     bookItem.append(bookActions);
@@ -131,11 +131,7 @@ function inputsAreValid() {
 
 
 // the function
-function saveFunction(e){
-
-    // if (urlInput.value == "" || titleInput.value == "" || contentInput.value == "") {
-    //     e.preeve
-    // }
+function saveFunction(){
     
     const id = Date.now();
     const titleValue = titleInput.value;
@@ -308,7 +304,7 @@ function editElemnt(title , url , content , id) {
         return ele;
     });
 
-    localStorage.setItem("bookmarks" , JSON.stringify(editFromLSAraay));
+localStorage.setItem("bookmarks" , JSON.stringify(editFromLSAraay));
 
     location.reload();
 }
@@ -331,3 +327,61 @@ function checkFirstUse() {
 }
 
 
+
+// ######
+// make serch filter functionaliyt
+
+const serchInput = document.getElementById("searchInput");
+const bookmarksContainer = document.querySelector(".content");
+
+serchInput.addEventListener("input", () => {
+    const searchString = serchInput.value.toLowerCase();
+
+    let serchArray = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+    const filteredBookmarks = serchArray.filter((bookmark) => {
+        return bookmark.title.toLowerCase().includes(searchString);
+    });
+
+    bookmarksContainer.innerHTML = "";
+
+    filteredBookmarks.forEach((bookmark) => {
+        bookMarkCreator(bookmark);
+    });
+
+});
+
+
+// ######
+// save theme preference in local storage
+
+window.addEventListener("beforeunload" , () => {
+    if(switching.classList.contains("active")) {
+        localStorage.setItem("theme" , "light");
+    } else {
+        localStorage.setItem("theme" , "dark");
+    }   
+});
+
+window.addEventListener("load" , () => {    
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+        if(!switching.classList.contains("active")) {
+            switching.classList.add("active");
+            nightIcon.classList.add("hidden");
+            ligthIcon.classList.remove("hideafter");
+            modes.forEach(mode => {
+                mode.classList.add("light");
+            });
+        }
+    } else {
+        if(switching.classList.contains("active")) {
+            switching.classList.remove("active");
+            nightIcon.classList.remove("hidden");
+            ligthIcon.classList.add("hideafter");
+            modes.forEach(mode => {
+                mode.classList.remove("light");
+            });
+        }
+    }
+});
